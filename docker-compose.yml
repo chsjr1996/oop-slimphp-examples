@@ -1,0 +1,38 @@
+version: "3"
+services:
+  wwwphp8:
+    build: .
+    container_name: poo_slim_app
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www/html/
+    links:
+      - db
+    networks:
+      - default
+    depends_on:
+      - db
+      
+  db:
+    image: mysql
+    container_name: poo_slim_db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: dbusuarios
+      MYSQL_ROOT_PASSWORD: 123
+    volumes:
+      - ./docker/mysql:/var/lib/mysql
+    networks:
+      - default
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: poo_slim_phpmyadmin
+    links:
+      - db:db
+    ports:
+      - 8000:80
+    environment:
+      MYSQL_ROOT_PASSWORD: 123
