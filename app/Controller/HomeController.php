@@ -13,7 +13,7 @@ class HomeController
      * @param Response $response
      * @return Response 
      */
-    public function index(Request $request, Response $response)
+    public function index(Response $response)
     {
         $response->getBody()->write('Hello world!');
         return $response;

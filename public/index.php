@@ -1,12 +1,12 @@
 <?php
 
 use App\Routes\Web;
-use Slim\Factory\AppFactory;
+use DI\Bridge\Slim\Bridge as AppSlimBridge;
 
 include_once __DIR__ . '/../vendor/autoload.php';
 
 // Create AppFactory
-$app = AppFactory::create();
+$app = AppSlimBridge::create();
 
 // Start routes
 Web::init($app);
