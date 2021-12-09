@@ -4,5 +4,5 @@ namespace App\Model;
 
 interface ICar
 {
-    public function getMovimentType(): string;
+    public function makeDrift(): string;
 }

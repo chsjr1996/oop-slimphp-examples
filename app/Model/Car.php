@@ -5,6 +5,10 @@ namespace App\Model;
 class Car extends AbstractVehicle implements ICar
 {
     protected string $type = 'Car';
-    protected string $model = 'Ferrari';
     protected string $movimentType = 'Land';
+
+    public function makeDrift(): string
+    {
+        return "Driting...";
+    }
 }
