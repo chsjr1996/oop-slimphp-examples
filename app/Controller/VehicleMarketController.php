@@ -8,8 +8,14 @@ use Psr\Http\Message\ResponseInterface as Response;
 
 class VehicleMarketController extends BaseController
 {
+    /**
+     * @var \App\Model\IVehicle[]
+     */
     private array $vehicles;
 
+    /**
+     * @param \App\Model\IVehicle[] $vehicles
+     */
     public function __construct(array $vehicles)
     {
         $this->vehicles = $vehicles;
