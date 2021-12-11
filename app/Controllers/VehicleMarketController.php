@@ -1,20 +1,20 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controllers;
 
-use App\Model\ICar;
-use App\Model\IPlane;
+use App\Models\ICar;
+use App\Models\IPlane;
 use Psr\Http\Message\ResponseInterface as Response;
 
 class VehicleMarketController extends BaseController
 {
     /**
-     * @var \App\Model\IVehicle[]
+     * @var \App\Models\IVehicle[]
      */
     private array $vehicles;
 
     /**
-     * @param \App\Model\IVehicle[] $vehicles
+     * @param \App\Models\IVehicle[] $vehicles
      */
     public function __construct(array $vehicles)
     {
